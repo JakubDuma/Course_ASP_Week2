@@ -238,6 +238,117 @@ namespace Course_ASP_Week2_Lesson7
             2 Dopuszczający
             1 Niedostateczny
             */
+            ocena:
+            Console.WriteLine("Podaj ocenę: ");
+            int mark = int.Parse(Console.ReadLine());
+            switch (mark)
+            {
+                case 1:
+                    Console.WriteLine("Niedostateczny");
+                    break;
+                case 2:
+                    Console.WriteLine("Dopuszczający");
+                    break;
+                case 3:
+                    Console.WriteLine("Dostateczny");
+                    break;
+                case 4:
+                    Console.WriteLine("Dobry");
+                    break;
+                case 5:
+                    Console.WriteLine("Bardzo dobry");
+                    break;
+                case 6:
+                    Console.WriteLine("Celujący");
+                    break;
+                default:
+                    Console.WriteLine("Błędna ocena");
+                    goto ocena;
+            }
+            /* 12. Napisz program, który pobierze numer dnia tygodnia i wyświetli jego nazwę
+               Dane testowe : 4
+               Rezultat w terminalu : Czwartek
+            */
+            dzien:
+            Console.WriteLine("Podaj numer dnia tygodnia: ");
+            int weekDay = int.Parse(Console.ReadLine());
+            switch (mark)
+            {
+                case 1:
+                    Console.WriteLine("Poniedziałek");
+                    break;
+                case 2:
+                    Console.WriteLine("Wtorek");
+                    break;
+                case 3:
+                    Console.WriteLine("Środa");
+                    break;
+                case 4:
+                    Console.WriteLine("Czwartek");
+                    break;
+                case 5:
+                    Console.WriteLine("Piątek");
+                    break;
+                case 6:
+                    Console.WriteLine("Sobota");
+                    break;
+                case 7:
+                    Console.WriteLine("Niedziela");
+                    break;
+                default:
+                    Console.WriteLine("Błędny numer dnia tygodnia");
+                    goto dzien;
+            }
+            /* 13. Napisz program, który będzie posiadał proste menu (wg. Wzoru poniżej) I będzie prostym kalkulatorem
+
+                   Podaj pierwszą liczbę:
+                   Podaj drugą liczbę:
+                   Podaj numer operacji do wykonania:
+                   1. Dodawanie
+                   2. Odejmowanie
+                   3. Mnożenie
+                   4. Dzielenie
+                   Twój wynik to:
+            */
+            Console.WriteLine("Podaj pierwszą liczbę: ");
+            double n1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj drugą liczbę: ");
+            double n2 = double.Parse(Console.ReadLine());
+
+        operation:
+            Console.WriteLine("Podaj numer operacji do wykonania: \n1. Dodawanie \n2. Odejmowanie \n3. Mnożenie \n4. Dzielenie");
+            string op = Console.ReadLine();
+            double result1;
+            
+            switch (op)
+            {
+                case "1":
+                    result1 = n1 + n2;
+                    Console.WriteLine($"Wynik: {result1}");
+                    break;
+                case "2":
+                    result1 = n1 - n2;
+                    Console.WriteLine($"Wynik: {result1}");
+                    break;
+                case "3":
+                    result1 = n1 * n2;
+                    Console.WriteLine($"Wynik: {result1}");
+                    break;
+                case "4":
+                    if (n2 == 0)
+                    {
+                        Console.WriteLine("Nie można dzielić przez 0");
+                    }
+                    else
+                    {
+                        result1 = n1 / n2;
+                        Console.WriteLine($"Wynik: {result1}");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Błędna operacja, wybierz poprawną");
+                    goto operation;
+            }
         }
     }
 }
