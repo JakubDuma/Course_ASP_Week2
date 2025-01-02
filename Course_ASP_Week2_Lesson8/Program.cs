@@ -97,7 +97,19 @@ namespace Course_ASP_Week2_Lesson8
             */
 
             Console.WriteLine("Podaj liczbe całkowita dla piramidy liczb: ");
-            int num = int.Parse(Console.ReadLine());
+            if (int.TryParse(Console.ReadLine(), out int n))
+            {
+                int currentNumber = 1;
+                for (int i = 1; currentNumber <= n; i++)
+                {
+                    for (int j = 1; j <= i && currentNumber <= n; j++) 
+                    {
+                        Console.Write(currentNumber + " ");
+                        currentNumber++;
+                    }
+                    Console.WriteLine();
+                }
+            }
 
             //5. Napisz program, który dla liczb od 1 do 20 wyświetli na ekranie ich 3 potęgę.
             int z3;
@@ -183,8 +195,6 @@ namespace Course_ASP_Week2_Lesson8
             string chars = Console.ReadLine();
             StringBuilder chars2 = new StringBuilder();
             
-            //chars[0].ToString().ToUpper();
-            //chars[chars.Length-1].ToString().ToLower();
             
             for (int i = chars.Length - 1; i >= 0; i--)
             {
@@ -196,8 +206,43 @@ namespace Course_ASP_Week2_Lesson8
 
             Console.WriteLine("Podaj liczbę dziesiętną: ");
             int decNum = int.Parse(Console.ReadLine());
+            List<int> binNum = new List<int>();
             
-            
+            while (decNum != 0)
+            {
+                if (decNum % 2 == 0)
+                {
+                    decNum = decNum / 2;
+                    binNum.Add(0);
+                }
+                else if (decNum % 2 == 1)
+                {
+                    decNum = (decNum - 1) / 2;
+                    binNum.Add(1);
+                }
+            }
+            Console.WriteLine("Liczba binarna to:");
+            for (int i = binNum.Count()-1; i >= 0; i--)
+            { 
+                Console.Write(binNum[i]);
+            }
+
+            //10. Napisz program, który znajdzie najmniejszą wspólną wielokrotność dla zadanych 2 liczb.
+
+            Console.WriteLine("Podaj pierwszą liczbę: ");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj drugą liczbę: ");
+            int num2 = int.Parse(Console.ReadLine());
+            int num3 = num1>num2 ? num2:num1;
+            int multiplicity = 1;
+            for (int i = 1; i <= num3; i++)
+            {
+                if(num1 % i == 0 && num2 % i == 0)
+                {
+                    multiplicity = i;
+                }
+            }
+            Console.WriteLine($"Najmniejsza wspólną wielokrotność obu liczb wynosi: {multiplicity}");
         }
     }
 }
