@@ -11,17 +11,9 @@ namespace Course_ASP_Week2_Lesson8
             int counter = 0;
             for (int i = 0; i <= 100; i++)
             {
-                if (i < 2)
-                {
-                    continue;
-                }
-                else if (i == 2)
+                if (i == 2)
                 {
                     counter++;
-                }
-                else if (i % 2 == 0)
-                {
-                    continue;
                 }
                 else 
                 {
@@ -59,7 +51,7 @@ namespace Course_ASP_Week2_Lesson8
                     min++;
                 }
             }
-            while (min >= max);
+            while (min <= max);
             /*foreach (int i in numbers)
             {
                 Console.WriteLine(i);
@@ -122,16 +114,9 @@ namespace Course_ASP_Week2_Lesson8
 
             //6. Napisz program, który dla liczb od 0 do 20 obliczy sumę wg wzoru:  1 + ½ +1 / 3 + ¼ itd.
             int sum;
-            for(int i = 0; i <= 20; i++)
+            for(int i = 1; i <= 20; i++)
             {
-                if (i == 0)
-                {
-                    continue;
-                }
-                else
-                {
-                    sum =+ 1/i;
-                }
+                 sum =+ 1/i;
             }
 
             //7. Napisz program, który dla liczby zadanej przez użytkownika narysuje diament o krótszej
